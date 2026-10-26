@@ -1,0 +1,186 @@
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.todo-container {
+  max-width: 450px;
+  margin: 60px auto;
+  padding: 25px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.todo-container h1 {
+  text-align: center;
+  color: var(--text-h);
+  margin-bottom: 24px;
+}
+
+/* Input section */
+.todo-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.todo-input input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+/* Add button */
+.add-btn {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.add-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* Todo list */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: left;
+}
+
+/* Task text */
+.todo-text {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: left;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* Shared button styles */
+.edit-btn,
+.save-btn,
+.cancel-btn,
+.delete-btn {
+  flex-shrink: 0;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.edit-btn:hover,
+.save-btn:hover,
+.cancel-btn:hover,
+.delete-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* Edit button */
+.edit-btn {
+  background: var(--accent-bg);
+  color: var(--text-h);
+}
+
+/* Save button */
+.save-btn {
+  background: #16a34a;
+  color: white;
+}
+
+/* Cancel button */
+.cancel-btn {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* Delete button */
+.delete-btn {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Edit input */
+.edit-input {
+  flex: 1;
+  min-width: 0;
+  padding: 9px 10px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  border-radius: 7px;
+  outline: none;
+  font-size: 14px;
+}
+
+.edit-input:focus {
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+/* Empty state */
+.empty-message {
+  text-align: center;
+  opacity: 0.65;
+  padding: 10px 0;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+  .todo-container {
+    margin: 25px 12px;
+    padding: 18px;
+  }
+
+  .todo-item {
+    gap: 7px;
+    padding: 10px;
+  }
+
+  .edit-btn,
+  .save-btn,
+  .cancel-btn,
+  .delete-btn {
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+}
